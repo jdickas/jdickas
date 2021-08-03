@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="x_653072_my_custom_jd_custom_app_table" version="2" view="size_as_related_list">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="My Custom App Table - size as related list" name="x_653072_my_custom_jd_custom_app_table" related_list="NULL" sys_domain="global" view="2a1773241b31301010df31d7dc4bcb8e">3567b7241b31301010df31d7dc4bcb00</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>x_653072_my_custom_my_addon_table.number</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-08-03 06:39:41</sys_created_on>
+            <sys_id>fd67b7241b31301010df31d7dc4bcb00</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-08-03 06:39:41</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>My Custom App Table - size as related list</calculated_name>
+            <filter/>
+            <name>x_653072_my_custom_jd_custom_app_table</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-08-03 06:39:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3567b7241b31301010df31d7dc4bcb00</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>My Custom App Table - size as related list</sys_name>
+            <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
+            <sys_update_name>sys_ui_related_x_653072_my_custom_jd_custom_app_table_size_as_related_list</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-08-03 06:39:41</sys_updated_on>
+            <sys_user/>
+            <view display_value="size as related list" name="size_as_related_list">2a1773241b31301010df31d7dc4bcb8e</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="My Section" section_id="6a1773241b31301010df31d7dc4bcb93" sys_domain="global" table="x_653072_my_custom_jd_custom_app_table" version="3" view="size_as_related_list">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_string_short_desc</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-08-03 06:38:23</sys_created_on>
+            <sys_id>b21773241b31301010df31d7dc4bcbdf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="My Section" display_value="My Section" name="x_653072_my_custom_jd_custom_app_table" sys_domain="global" view="2a1773241b31301010df31d7dc4bcb8e">6a1773241b31301010df31d7dc4bcb93</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-08-03 06:38:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>My Section</caption>
+            <header>false</header>
+            <name>x_653072_my_custom_jd_custom_app_table</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-08-03 06:38:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6a1773241b31301010df31d7dc4bcb93</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_653072_my_custom_jd_custom_app_table</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
+            <sys_update_name>sys_ui_section_6a1773241b31301010df31d7dc4bcb93</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-08-03 06:38:23</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="size as related list" name="size_as_related_list">2a1773241b31301010df31d7dc4bcb8e</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
