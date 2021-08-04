@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_653072_my_custom.URLBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>URLBuilder</name>
+        <script><![CDATA[var URLBuilder = Class.create();
+URLBuilder.prototype = {
+
+    initialize: function () {},
+
+	buildAddOnValueURL: function (sysId) {
+		var url = '';
+		var query = QueryBuilder.findAddOnValue(sysId);
+		
+		//gs.debug('[My Custom App][buildAddOnValueURL][URLBuilder] query ==> ' + query);
+		
+		var record = GlideUtils.getGlideRecord(Constants.ADDON_VALUES_TABLE, query);
+		
+		//gs.debug('[My Custom App][buildAddOnValueURL][URLBuilder] record ==> ' + record);
+		
+		if(record.next()) {
+			url = Utils.buildPageUrl(Constants.ADDON_VALUES_TABLE, record.getValue('sys_id'));
+		}
+		
+		//gs.debug('[My Custom App][buildAddOnValueURL][URLBuilder] url ==> ' + url);
+		
+		return url;
+	},
+	
+    type: 'URLBuilder'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-03 09:07:31</sys_created_on>
+        <sys_id>1c585c3c1b71301010df31d7dc4bcbe8</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>URLBuilder</sys_name>
+        <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
+        <sys_update_name>sys_script_include_1c585c3c1b71301010df31d7dc4bcbe8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-04 12:31:16</sys_updated_on>
+    </sys_script_include>
+</record_update>

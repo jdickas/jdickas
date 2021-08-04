@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="My Custom App Table" max_length="40" name="x_653072_my_custom_jd_custom_app_table" sizeclass="0" type="collection">
+    <element label="My Custom App Table" max_length="40" name="x_653072_my_custom_jd_custom_app_table" sizeclass="2" type="collection">
         <element attributes="edge_encryption_enabled=true" label="My string field" max_length="40" name="my_string_field" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="encode_utf8=false" default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="assigned to" max_length="32" name="u_reference_1" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Ajax email" max_length="40" name="u_reference_1_email" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Short description" mandatory="true" max_length="125" name="u_string_short_desc" type="string"/>
+        <index name="index">
+            <element name="u_reference_1"/>
+        </index>
     </element>
 </database>
