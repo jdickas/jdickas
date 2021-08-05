@@ -11,7 +11,7 @@
   
 	findAddOnValue: function (sysId) {
 		var builder = new global.StringBuilder();
-        builder.append('number=' + sysId);
+        builder.append('number.sys_id=' + sysId);
         return builder.toString(); 
 		
 	},
@@ -20,13 +20,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-08-03 09:17:59</sys_created_on>
         <sys_id>3b3bdcbc1b71301010df31d7dc4bcb1e</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>QueryBuilder</sys_name>
         <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
         <sys_update_name>sys_script_include_3b3bdcbc1b71301010df31d7dc4bcb1e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-04 12:33:12</sys_updated_on>
+        <sys_updated_on>2021-08-05 07:12:00</sys_updated_on>
     </sys_script_include>
 </record_update>

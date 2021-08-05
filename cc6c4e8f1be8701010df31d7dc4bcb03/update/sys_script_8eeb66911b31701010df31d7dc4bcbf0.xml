@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_653072_my_custom_jd_custom_app_table</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Change Short Description</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	var sysId = current.sys_id;
+	try{
+	     var urlBuilder = new URLBuilder();
+		 var url = urlBuilder.buildAddOnValueURL(sysId);
+    } catch (err) {
+         gs.error("NeedIt App: a JavaScript runtime error occurred - " + err);
+	}
+	//var urlBuilder = new URLBuilder();
+    //var url = urlBuilder.buildAddOnValueURL(sysId);
+	var url = "Hallo";
+	  
+	gs.info("My Custom App - Business Rule - Change Short Description - sysId =====> " + sysId);
+	//gs.log("My Custom App - ConfiguratorAjaxLoader - sysId =====> ", "My Custom App");
+	//jslog("This message is from My Custom App - ConfiguratorAjaxLoader jslog().");
+
+    current.u_string_short_desc.setValue(url);
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-05 09:07:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8eeb66911b31701010df31d7dc4bcbf0</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Change Short Description</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
+        <sys_update_name>sys_script_8eeb66911b31701010df31d7dc4bcbf0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-05 10:38:38</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=8eeb66911b31701010df31d7dc4bcbf0"/>
+</record_update>
