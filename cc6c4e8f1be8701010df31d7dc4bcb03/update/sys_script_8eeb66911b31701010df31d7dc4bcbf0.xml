@@ -39,7 +39,7 @@
 	}
 	//var urlBuilder = new URLBuilder();
     //var url = urlBuilder.buildAddOnValueURL(sysId);
-	var url = "Hallo";
+	//var url = "Hallo";
 	  
 	gs.info("My Custom App - Business Rule - Change Short Description - sysId =====> " + sysId);
 	//gs.log("My Custom App - ConfiguratorAjaxLoader - sysId =====> ", "My Custom App");
@@ -54,7 +54,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8eeb66911b31701010df31d7dc4bcbf0</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Change Short Description</sys_name>
         <sys_overrides/>
         <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
@@ -62,7 +62,7 @@
         <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
         <sys_update_name>sys_script_8eeb66911b31701010df31d7dc4bcbf0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-05 10:38:38</sys_updated_on>
+        <sys_updated_on>2021-08-06 06:35:05</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

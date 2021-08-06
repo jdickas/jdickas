@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_653072_my_custom.Utils2</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Kopie des Script includes Utils aber ohne StringBuilder</description>
+        <name>Utils2</name>
+        <script><![CDATA[Utils2 = {
+
+  // var url = '/x_atnt_ssp_record_bmw_incident_values.do?sys_id=09bf8b87db6db010dd6f5117f396199d';
+	
+  buildPageUrl: function (table, sysId) {
+    //var builder = new global.StringBuilder();
+	var builder = new String();
+//     builder.append('/');
+//     builder.append(table);
+//     builder.append('.do?');
+//     builder.append('sys_id=' + sysId);'
+	builder = builder + '/' + table + '.do?' + 'sys_id=' + sysId;
+
+    return builder.toString();
+  }
+
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-06 06:30:20</sys_created_on>
+        <sys_id>06119be51b3d701010df31d7dc4bcbc0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Utils2</sys_name>
+        <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
+        <sys_update_name>sys_script_include_06119be51b3d701010df31d7dc4bcbc0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-06 06:30:20</sys_updated_on>
+    </sys_script_include>
+</record_update>
