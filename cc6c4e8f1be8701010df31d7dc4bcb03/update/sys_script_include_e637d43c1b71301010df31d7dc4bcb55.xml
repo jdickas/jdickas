@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_653072_my_custom.ConfiguratorAjaxLoader</api_name>
         <caller_access/>
@@ -10,36 +10,79 @@
         <script><![CDATA[var ConfiguratorAjaxLoader = Class.create();
 ConfiguratorAjaxLoader.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
-//   initialize: function (request, responseXML, gc) {
-//     global.AbstractAjaxProcessor.prototype.initialize.call(this, request, responseXML, gc);
-//   },
+    //   initialize: function (request, responseXML, gc) {
+    //     global.AbstractAjaxProcessor.prototype.initialize.call(this, request, responseXML, gc);
+    //   },
 
-  loadAddOnValueURL: function () {
-    var sysId = this.getParameter('sysparm_sys_id');
-    var urlBuilder = new URLBuilder();
-    var url = urlBuilder.buildAddOnValueURL(sysId);
-	  
-	gs.info("My Custom App - ConfiguratorAjaxLoader - url =====> " + url);
-	//gs.log("My Custom App - ConfiguratorAjaxLoader - sysId =====> ", "My Custom App");
-	//jslog("This message is from My Custom App - ConfiguratorAjaxLoader jslog().");
+    loadAddOnValueURL: function() {
+        var sysId = this.getParameter('sysparm_sys_id');
+        var urlBuilder = new URLBuilder();
+        var url = urlBuilder.buildAddOnValueURL(sysId);
 
-    return url;
-  },
+        gs.info("My Custom App - ConfiguratorAjaxLoader - url =====> " + url);
+        //gs.log("My Custom App - ConfiguratorAjaxLoader - sysId =====> ", "My Custom App");
+        //jslog("This message is from My Custom App - ConfiguratorAjaxLoader jslog().");
 
-  type: 'ConfiguratorAjaxLoader'
-});
-]]></script>
+        return url;
+    },
+
+    getNumOfAddonEntries: function() {
+        var num = 2;
+
+        var sysId = this.getParameter('sysparm_sys_id');
+        gs.addInfoMessage("My Custom App - ConfiguratorAjaxLoader - getNumOfAddonEntries - sys_id: " + sysId);
+
+        //var addonGa = new GlideRecord('sys_user_grmember');
+		var grpMems = new GlideRecord('x_653072_my_custom_my_addon_table');
+        grpMems.addQuery('number.sys_id', sysId);
+        //addonGA.addAggregate('COUNT');
+        grpMems.query();
+		
+        //number.sys_id= d0d3c5491b31301010df31d7dc4bcb3f 
+        //if (addonGA.next()) {
+        num = grpMems.getRowCount();
+        gs.addInfoMessage("My Custom App - ConfiguratorAjaxLoader - getNumOfAddonEntries - num: " + num);
+        return num;
+        //}
+    },
+
+    countGroupMembers: function() {
+
+        var grpName = "";
+        var message = "There are no members in this Assignment Group";
+		gs.addInfoMessage(message + " 1 countGroupMembers");
+        var groupID = this.getParameter('sysparm_group_id');
+
+        var grpMems = new GlideRecord('sys_user_grmember');
+        grpMems.addQuery('group.sys_id', groupID);
+		gs.addInfoMessage(message + " 2 countGroupMembers groupID: " + groupID);
+        grpMems.query();
+
+        if (grpMems.next()) {
+            grpName = grpMems.getDisplayValue('group');
+			gs.addInfoMessage(message + " 3a countGroupMembers groupName: " + grpName);
+        }
+        if (grpName != "") {
+            message = "There are " + grpMems.getRowCount() + " members in the " + grpName + " group";
+			gs.addInfoMessage(message + " 3b countGroupMembers groupID: " + groupID);
+        }
+
+        return message;
+    },
+
+    type: 'ConfiguratorAjaxLoader'
+});]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-08-03 09:01:53</sys_created_on>
         <sys_id>e637d43c1b71301010df31d7dc4bcb55</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>ConfiguratorAjaxLoader</sys_name>
         <sys_package display_value="My Custom App" source="x_653072_my_custom">cc6c4e8f1be8701010df31d7dc4bcb03</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="My Custom App">cc6c4e8f1be8701010df31d7dc4bcb03</sys_scope>
         <sys_update_name>sys_script_include_e637d43c1b71301010df31d7dc4bcb55</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-06 06:51:56</sys_updated_on>
+        <sys_updated_on>2022-02-04 14:15:56</sys_updated_on>
     </sys_script_include>
 </record_update>
