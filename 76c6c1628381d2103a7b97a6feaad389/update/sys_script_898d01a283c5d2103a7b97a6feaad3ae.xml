@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="incident">business_serviceISNOTEMPTY^EQ<item endquery="false" field="business_service" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>PopupServiceOwnerINC</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+
+	let tblName = current.sys_class_name;
+	let recSysID = current.sys_id;
+	let fldName = 'business_service.owned_by';
+
+	let neededGR = new global.VariableGlideRecords();
+	let currRecServiceOwnerValue = neededGR.getVarGlideRecordField(tblName, recSysID, fldName);
+
+	gs.addInfoMessage('Service Owner Sys_ID: (5f728212c0a8010e004a13c7588047dd) | ' + currRecServiceOwnerValue);
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-07 17:56:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>898d01a283c5d2103a7b97a6feaad3ae</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>PopupServiceOwnerINC</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="VariableGlideRecordApp" source="76c6c1628381d2103a7b97a6feaad389">76c6c1628381d2103a7b97a6feaad389</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="VariableGlideRecordApp">76c6c1628381d2103a7b97a6feaad389</sys_scope>
+        <sys_update_name>sys_script_898d01a283c5d2103a7b97a6feaad3ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-07 18:57:46</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=898d01a283c5d2103a7b97a6feaad3ae"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>898d01a283c5d2103a7b97a6feaad3ae</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-07 17:56:55</sys_created_on>
+        <sys_id>4630d9e283c5d2103a7b97a6feaad398</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-07 17:56:55</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
