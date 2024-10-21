@@ -41,13 +41,13 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>sys_id_des_request_for</name>
+        <name>sys_id_requested_for</name>
         <order>300</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Sys_ID des request_for</question_text>
+        <question_text>Sys_ID des requested_for</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -77,14 +77,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-09 14:08:50</sys_created_on>
         <sys_id>2ddeae0383c152103a7b97a6feaad3bc</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Sys_ID des request_for</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Sys_ID des requested_for</sys_name>
         <sys_package display_value="VariableGlideRecordApp" source="76c6c1628381d2103a7b97a6feaad389">76c6c1628381d2103a7b97a6feaad389</sys_package>
         <sys_policy/>
         <sys_scope display_value="VariableGlideRecordApp">76c6c1628381d2103a7b97a6feaad389</sys_scope>
         <sys_update_name>item_option_new_2ddeae0383c152103a7b97a6feaad3bc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-09 14:08:50</sys_updated_on>
+        <sys_updated_on>2024-10-21 20:24:38</sys_updated_on>
         <table/>
         <tooltip/>
         <type>6</type>
