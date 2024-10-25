@@ -8,48 +8,63 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Select Members">86d9ce83830152103a7b97a6feaad3ab</cat_item>
-        <cat_variable>IO:eb0b4a07830152103a7b97a6feaad318</cat_variable>
+        <cat_variable>IO:2b5e3dd083a996103a7b97a6feaad3a3</cat_variable>
         <condition/>
         <description/>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>min 2 members info</name>
+        <name>getTeamMembers</name>
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
-   if (isLoading || newValue == '') {
-      return;
-   }
-
-    var lc = g_form.getValue('v_members'); // Variablenname des List Collectors
-    var selectedItems = lc.split(',');
-
-    if (selectedItems.length < 2) {
-        g_form.addInfoMessage('Bitte wähle mindestens 2 Werte aus.');
-    } else {
-        g_form.clearMessages(); // Löscht die Fehlermeldung, wenn genug Werte ausgewählt sind
+    if (isLoading || newValue == '') {
+        return;
     }
+    //Type appropriate comment here, and begin script below
 
-   //Type appropriate comment here, and begin script below
-   
+    var reqFor = g_form.getValue('requested_for');
+
+    //g_form.addInfoMessage('[SelectMembers][getTeamMembers] Start CS! ' + reqFor);
+
+	g_form.clearValue('v_members');
+
+    var teamMembers = new GlideAjax('AjaxServiceCatalogUtils');
+    //teamMembers.addParam(sys_parm)
+    teamMembers.addParam('sysparm_name', 'getGroupMembers');
+    teamMembers.addParam('sysparm_groupSysID', newValue);
+
+    //g_form.addInfoMessage('[SelectMembers][getTeamMembers] before getAnswer CS! ' + newValue);
+
+    teamMembers.getXML(function(response) {
+        //g_form.addInfoMessage('[SelectMembers][getTeamMembers] after getAnswer CS!');
+        var members = JSON.parse(response.responseXML.documentElement.getAttribute('answer'));
+		members.push(reqFor);
+
+        if (members != '') {
+            //g_form.addInfoMessage('[SelectMembers][getTeamMembers] members: ' + members);
+            g_form.setValue('v_members', members.join(','));
+        }
+
+    });
+
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-21 20:26:39</sys_created_on>
+        <sys_created_on>2024-10-25 18:32:50</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>9c78b54383d512103a7b97a6feaad342</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>min 2 members info</sys_name>
+        <sys_id>33938a9883a996103a7b97a6feaad30b</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>getTeamMembers</sys_name>
         <sys_overrides/>
         <sys_package display_value="VariableGlideRecordApp" source="76c6c1628381d2103a7b97a6feaad389">76c6c1628381d2103a7b97a6feaad389</sys_package>
         <sys_policy/>
         <sys_scope display_value="VariableGlideRecordApp">76c6c1628381d2103a7b97a6feaad389</sys_scope>
-        <sys_update_name>catalog_script_client_9c78b54383d512103a7b97a6feaad342</sys_update_name>
+        <sys_update_name>catalog_script_client_33938a9883a996103a7b97a6feaad30b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-25 17:54:37</sys_updated_on>
+        <sys_updated_on>2024-10-25 20:11:49</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
@@ -58,13 +73,13 @@
         <view/>
     </catalog_script_client>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>9c78b54383d512103a7b97a6feaad342</id>
+        <id>33938a9883a996103a7b97a6feaad30b</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-21 20:26:39</sys_created_on>
-        <sys_id>7bb8bd0383d512103a7b97a6feaad347</sys_id>
+        <sys_created_on>2024-10-25 18:32:50</sys_created_on>
+        <sys_id>3f0542d483a996103a7b97a6feaad330</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-21 20:26:39</sys_updated_on>
+        <sys_updated_on>2024-10-25 18:32:50</sys_updated_on>
         <table>catalog_script_client</table>
         <use_es_latest>false</use_es_latest>
     </sys_es_latest_script>
