@@ -32,7 +32,7 @@
 		}
 	];
 
-	g_form.addInfoMessage('Chefs: ' + JSON.stringify(defChef));
+	//g_form.addInfoMessage('Chefs: ' + JSON.stringify(defChef));
 
     var chefsValue = g_form.getValue('v_chefs');
     //g_form.addInfoMessage('Chefs: ' + chefsValue);
@@ -49,16 +49,16 @@
     teamMembers.addParam('sysparm_name', 'getChefsfromTeam');
     teamMembers.addParam('sysparm_groupSysID', newValue);
 
-    g_form.addInfoMessage('[SelectMembers][PreFill Chefs] before getAnswer CS! ' + newValue);
+    //g_form.addInfoMessage('[SelectMembers][PreFill Chefs] before getAnswer CS! ' + newValue);
 
     teamMembers.getXML(function(response) {
-        g_form.addInfoMessage('[SelectMembers][PreFill Chefs] after getAnswer CS!');
-        var members = response.responseXML.documentElement.getAttribute('answer');
+        //g_form.addInfoMessage('[SelectMembers][PreFill Chefs] after getAnswer CS!');
+        var members = JSON.parse(response.responseXML.documentElement.getAttribute('answer'));
 
         if (members != '') {
 			//g_form('Members');
-            g_form.addInfoMessage('[SelectMembers][PreFill Chefs] members: ' + members);
-            //g_form.setValue('v_chefs', members);
+            //g_form.addInfoMessage('[SelectMembers][PreFill Chefs] members: ' + JSON.stringify(members));
+            g_form.setValue('v_chefs', JSON.stringify(members));
         }
 
     });	
@@ -70,7 +70,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a4956bd983b9d2103a7b97a6feaad31d</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>PreFill Chefs</sys_name>
         <sys_overrides/>
         <sys_package display_value="VariableGlideRecordApp" source="76c6c1628381d2103a7b97a6feaad389">76c6c1628381d2103a7b97a6feaad389</sys_package>
@@ -78,7 +78,7 @@
         <sys_scope display_value="VariableGlideRecordApp">76c6c1628381d2103a7b97a6feaad389</sys_scope>
         <sys_update_name>catalog_script_client_a4956bd983b9d2103a7b97a6feaad31d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-16 16:43:04</sys_updated_on>
+        <sys_updated_on>2024-11-16 22:02:52</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

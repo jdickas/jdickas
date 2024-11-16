@@ -60,7 +60,7 @@ AjaxServiceCatalogUtils.prototype = Object.extendsObject(global.AbstractAjaxProc
             if (theChef) {
                 var myChefObj = new ChefDataObjectLoader();
                 var myChef = myChefObj.createOneChef(theChef.email, theChef.first_name, theChef.last_name, theChef.sys_id);
-                gs.info('[AjaxServiceCatalogUtils][getChefsfromTeam] in for!' + chefsArr.length + ' | ' + JSON.stringify(myChef));
+                //gs.info('[AjaxServiceCatalogUtils][getChefsfromTeam] in for!' + chefsArr.length + ' | ' + JSON.stringify(myChef));
                 chefsArr.push(myChef);
 
             }
@@ -79,14 +79,14 @@ AjaxServiceCatalogUtils.prototype = Object.extendsObject(global.AbstractAjaxProc
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-25 18:23:11</sys_created_on>
         <sys_id>e1610ed483a996103a7b97a6feaad39f</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>AjaxServiceCatalogUtils</sys_name>
         <sys_package display_value="VariableGlideRecordApp" source="76c6c1628381d2103a7b97a6feaad389">76c6c1628381d2103a7b97a6feaad389</sys_package>
         <sys_policy/>
         <sys_scope display_value="VariableGlideRecordApp">76c6c1628381d2103a7b97a6feaad389</sys_scope>
         <sys_update_name>sys_script_include_e1610ed483a996103a7b97a6feaad39f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-16 16:25:47</sys_updated_on>
+        <sys_updated_on>2024-11-16 22:12:58</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>e1610ed483a996103a7b97a6feaad39f</id>
