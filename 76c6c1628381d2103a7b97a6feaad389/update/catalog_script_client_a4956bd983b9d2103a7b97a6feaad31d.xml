@@ -15,56 +15,70 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>getTeamMembers</name>
-        <order>100</order>
+        <name>PreFill Chefs</name>
+        <order>200</order>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
         return;
     }
+
+	var defChef = [
+		{
+			"w_email": "fred.luddy@example.com",
+			"w_nachname": "Luddy",
+			"w_vorsitzender": "5137153cc611227c000bbd1bd8cd2005",
+			"w_vorname": "Fred"
+		}
+	];
+
+	g_form.addInfoMessage('Chefs: ' + JSON.stringify(defChef));
+
+    var chefsValue = g_form.getValue('v_chefs');
+    //g_form.addInfoMessage('Chefs: ' + chefsValue);
+
+    // Ergebnis:
+    // Chefs: [{"w_email":"aileen.mottern@example.com","w_nachname":"Mottern","w_vorsitzender":"71826bf03710200044e0bfc8bcbe5d3b","w_vorname":"Aileen"}] 
+
     //Type appropriate comment here, and begin script below
-
-    var reqFor = g_form.getValue('requested_for');
-
-    //g_form.addInfoMessage('[SelectMembers][getTeamMembers] Start CS! ' + reqFor);
-
-	g_form.clearValue('v_members');
+	g_form.clearValue('v_chefs');
+	//g_form.setValue('v_chefs', JSON.stringify(defChef));
 
     var teamMembers = new GlideAjax('AjaxServiceCatalogUtils');
     //teamMembers.addParam(sys_parm)
-    teamMembers.addParam('sysparm_name', 'getGroupMembers');
+    teamMembers.addParam('sysparm_name', 'getChefsfromTeam');
     teamMembers.addParam('sysparm_groupSysID', newValue);
 
-    //g_form.addInfoMessage('[SelectMembers][getTeamMembers] before getAnswer CS! ' + newValue);
+    g_form.addInfoMessage('[SelectMembers][PreFill Chefs] before getAnswer CS! ' + newValue);
 
     teamMembers.getXML(function(response) {
-        //g_form.addInfoMessage('[SelectMembers][getTeamMembers] after getAnswer CS!');
-        var members = JSON.parse(response.responseXML.documentElement.getAttribute('answer'));
-		members.push(reqFor);
+        g_form.addInfoMessage('[SelectMembers][PreFill Chefs] after getAnswer CS!');
+        var members = response.responseXML.documentElement.getAttribute('answer');
 
         if (members != '') {
-            //g_form.addInfoMessage('[SelectMembers][getTeamMembers] members: ' + members);
-            g_form.setValue('v_members', members.join(','));
+			//g_form('Members');
+            g_form.addInfoMessage('[SelectMembers][PreFill Chefs] members: ' + members);
+            //g_form.setValue('v_chefs', members);
         }
 
-    });
+    });	
 
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-25 18:32:50</sys_created_on>
+        <sys_created_on>2024-11-10 14:24:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>33938a9883a996103a7b97a6feaad30b</sys_id>
-        <sys_mod_count>21</sys_mod_count>
-        <sys_name>getTeamMembers</sys_name>
+        <sys_id>a4956bd983b9d2103a7b97a6feaad31d</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>PreFill Chefs</sys_name>
         <sys_overrides/>
         <sys_package display_value="VariableGlideRecordApp" source="76c6c1628381d2103a7b97a6feaad389">76c6c1628381d2103a7b97a6feaad389</sys_package>
         <sys_policy/>
         <sys_scope display_value="VariableGlideRecordApp">76c6c1628381d2103a7b97a6feaad389</sys_scope>
-        <sys_update_name>catalog_script_client_33938a9883a996103a7b97a6feaad30b</sys_update_name>
+        <sys_update_name>catalog_script_client_a4956bd983b9d2103a7b97a6feaad31d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-10 16:58:07</sys_updated_on>
+        <sys_updated_on>2024-11-16 16:43:04</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
@@ -73,13 +87,13 @@
         <view/>
     </catalog_script_client>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>33938a9883a996103a7b97a6feaad30b</id>
+        <id>a4956bd983b9d2103a7b97a6feaad31d</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-25 18:32:50</sys_created_on>
-        <sys_id>3f0542d483a996103a7b97a6feaad330</sys_id>
+        <sys_created_on>2024-11-10 14:24:49</sys_created_on>
+        <sys_id>eeb5abd983b9d2103a7b97a6feaad35b</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-25 18:32:50</sys_updated_on>
+        <sys_updated_on>2024-11-10 14:24:49</sys_updated_on>
         <table>catalog_script_client</table>
         <use_es_latest>false</use_es_latest>
     </sys_es_latest_script>
